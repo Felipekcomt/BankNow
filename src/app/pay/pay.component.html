@@ -1,0 +1,23 @@
+<div style="text-align: center">
+        <h1>¿Deseas pagar todo el saldo?</h1>
+        <button mat-raised-button color="primary" style="margin: 2%" matDialogClose (click)="SellAll()">Aceptar</button>
+        <button mat-raised-button color="primary" style="margin: 2%" matDialogClose (click)="goToBack()">Cancelar</button>
+        <form [formGroup]="form">
+        <h1>¿Deseas amortizar el saldo?</h1>
+        <mat-form-field>
+          <input matInput  placeholder="Ingrese la amortización" formControlName="stocktemp">
+        </mat-form-field>
+  <div class ="alert-danger" *ngIf="stocktemp.invalid && (stocktemp.dirty || stocktemp.touched)">
+    <div class="container-error-message" *ngIf="stocktemp.errors.required">Amortización requerida</div>
+    <div class="container-error-message" *ngIf="stocktemp.errors.pattern">Solo se permiten numeros</div>
+  </div>
+   <div>
+  <button mat-raised-button color="primary" style="margin: 2%" matDialogClose (click)="SellAmortization()">
+    Confirmar
+  </button>
+    <button mat-raised-button color="primary" style="margin: 2%" matDialogClose (click)="goToBack()">
+      Cancelar
+    </button>
+   </div>
+  </form>
+</div>

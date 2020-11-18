@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+
+}
+.mat-elevation-z8
+{
+  margin: 10%;
+}
+.main{
+  text-align: center;
+  margin: 5%;
+}
+.main-card{
+  height: auto;
+  width: 800px;
+  align-items: center;
+  justify-content: center;
+}
+.cards{
+  margin: 2%;
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.scrollable-content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+

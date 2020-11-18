@@ -1,0 +1,92 @@
+<div class="main-div">
+<mat-card class="mat-card" >
+<form [formGroup]="form">
+  <div class="container">
+  <mat-form-field>
+    <input matInput placeholder="Ingrese su nombre" formControlName="name">
+  </mat-form-field>
+    <div class ="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div class="container-error-message" *ngIf="name.errors.required">
+        Nombre es requerido
+      </div>
+      <div class="container-error-message" *ngIf="name.errors.minlength">
+        Se requiere minimo 3 caracteres
+      </div>
+    </div>
+  </div>
+  <div class="container">
+  <mat-form-field>
+    <input matInput  placeholder="Ingrese su apellido" formControlName="lastname">
+  </mat-form-field>
+    <div class ="alert-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+      <div class="container-error-message" *ngIf="lastname.errors.required">
+        Apellido es requerido
+      </div>
+      <div class="container-error-message" *ngIf="lastname.errors.minlength">
+        Se requiere minimo 3 caracteres
+      </div>
+    </div>
+</div>
+  <div class="container">
+      <mat-form-field>
+        <input matInput  placeholder="Ingrese su dni" formControlName="dni">
+      </mat-form-field>
+    <div class ="alert-danger" *ngIf="dni.invalid && (dni.dirty || dni.touched)">
+      <div class="container-error-message" *ngIf="dni.errors.required">
+        Dni es requerido
+      </div>
+      <div class="container-error-message" *ngIf="dni.errors.minlength || dni.errors.maxlength">
+        Se requieren 8 digitos
+      </div>
+      <div class="container-error-message" *ngIf="dni.errors.pattern">
+        Solo se permiten numeros
+      </div>
+    </div>
+  </div>
+  <div class="container">
+      <mat-form-field>
+        <input matInput  placeholder="Ingrese su Celular" formControlName="celular">
+      </mat-form-field>
+    <div class ="alert-danger" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+      <div class="container-error-message" *ngIf="celular.errors.required">
+        Celular es requerido
+      </div>
+      <div class="container-error-message" *ngIf="celular.errors.minlength || celular.errors.maxlength">
+        Se requieren 9 numeros
+      </div>
+      <div class="container-error-message" *ngIf="celular.errors.pattern">
+        Solo se permiten numeros
+      </div>
+    </div>
+  </div>
+</form>
+  <div class="radio-button">
+  <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+    [(ngModel)]="tempTasa">
+    <mat-radio-button class="example-radio-button" *ngFor="let ListTasa of ListTasas" [value]="ListTasa">
+      {{ListTasa}}
+    </mat-radio-button>
+  </mat-radio-group>
+  </div>
+  <form [formGroup]="form">
+    <div class="container">
+      <mat-form-field>
+        <input matInput placeholder="Ingrese la Tasa (%)" formControlName="rate">
+      </mat-form-field>
+      <div class ="alert-danger" *ngIf="rate.invalid && (rate.dirty || rate.touched)">
+        <div class="container-error-message" *ngIf="rate.errors.required">
+          Nombre es requerido
+        </div>
+        <div class="container-error-message" *ngIf="rate.errors.pattern">
+          Solo se permiten numeros
+        </div>
+      </div>
+    </div>
+  </form>
+  <mat-card-footer>
+    <button mat-raised-button class="button-footer" color="primary" (click)="Validation()">Aceptar</button>
+    <button mat-raised-button class="button-footer" color="primary" (click)="goToBack()">Cancelar</button>
+  </mat-card-footer>
+</mat-card>
+</div>
+

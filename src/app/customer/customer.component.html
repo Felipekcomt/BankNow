@@ -1,0 +1,50 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]=customers>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Nombre </th>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center"> {{customer.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Aplellido </th>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center"> {{customer.lastname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="wallet">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Credito </th>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center"> {{customer.wallet}} </td>
+    </ng-container>
+    <ng-container matColumnDef="initialdate" >
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Fecha de inicio </th>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center">
+      <span *ngIf="customer.initialdate === null">  Sin fecha de inicio </span>
+        <span *ngIf="customer.initialdate !== null">  {{customer.initialdate | date: 'shortDate'}} </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="endingdate">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Fecha de facturación </th>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center">
+       <span *ngIf="customer.endingdate === null"> Sin fecha de Facturación </span>
+        <span *ngIf="customer.endingdate !== null"> {{customer.endingdate | date: 'shortDate'}} </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Por pagar </th>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center"> {{customer.stock.toFixed(2)}} </td>
+    </ng-container>
+    <ng-container matColumnDef="icon">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Cancelar </th>
+      <td mat-cell *matCellDef="let customer" (click)="open(customer.id)" style="text-align: center"> <mat-icon aria-hidden="false" aria-label="Example home icon">credit_card</mat-icon> </td>
+    </ng-container>
+    <ng-container matColumnDef="buttom">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Comprar </th>
+      <td mat-cell *matCellDef="let customer" (click)="buy(customer.id)" style="text-align: center"> <button mat-raised-button color="primary">Comprar</button> </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center"> Eliminar Usuarios </th>
+      <td mat-cell *matCellDef="let customer" (click)="delete(customer.id)" style="text-align: center"> <button mat-raised-button color="primary">Eliminar</button> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

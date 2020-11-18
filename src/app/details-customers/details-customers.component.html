@@ -1,0 +1,18 @@
+<div class="div-details">
+    <mat-card class="mat-card-customer" style="align-content: center">
+      <mat-card-title> Detalles del cliente </mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item class="mat-list-item"> Nombre: {{ customer?.name}}</mat-list-item>
+          <mat-list-item class="mat-list-item"> Apellido: {{ customer?.lastname}}</mat-list-item>
+          <mat-list-item class="mat-list-item"> Dni: {{ customer?.dni}}</mat-list-item>
+          <mat-list-item class="mat-list-item"> Celular: {{ customer?.celular}}</mat-list-item>
+          <mat-list-item class="mat-list-item"> Credito: {{ customer?.wallet}}</mat-list-item>
+        </mat-list>
+        <mat-card-footer>
+          <button mat-raised-button color="primary" style="margin-right: 5%" (click)="GoToCreate(customer.id)">Linea de Credito</button>
+          <button mat-raised-button color="primary" (click)="back()">Atras</button>
+        </mat-card-footer>
+      </mat-card-content>
+    </mat-card>
+</div>

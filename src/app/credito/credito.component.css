@@ -1,0 +1,13 @@
+.mat-card-credito{
+  height: auto;
+  width: 300px;
+  background: whitesmoke;
+  text-align:center;
+  margin: 10%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+.div-credito{
+  text-align: center;
+}

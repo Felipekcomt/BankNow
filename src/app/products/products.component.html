@@ -1,0 +1,36 @@
+
+<div class="main">
+  <mat-grid-list cols="2">
+    <mat-grid-tile>
+  <mat-card class="main-card">
+            <mat-card style="width: auto; height: auto">
+              <mat-card-content>Disponible: {{customer?.wallet}} Soles</mat-card-content>
+              <mat-card-content>Vas comprando: {{saldo.toFixed(2)}} Soles</mat-card-content>
+            </mat-card>
+            <mat-card class="cards" *ngFor="let product of products">
+              <img style="height: 120px; width: 120px" [src]="product.url">
+              <mat-card-subtitle>Precio: {{product.price.toFixed(2)}} Soles</mat-card-subtitle>
+              <mat-card-title style="display: inline-block">{{product.name}}</mat-card-title>
+              <mat-card-footer> <button class="publicar-button" mat-raised-button color="primary" (click)="buy(product.id)" style="margin: 3%">Comprar</button></mat-card-footer>
+            </mat-card>
+            <mat-card-footer>
+              <button class="publicar-button" mat-raised-button color="primary" style="margin: 5%" (click)="goToBack()">Atras</button>
+            </mat-card-footer>
+  </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+  <mat-card>
+              <mat-card-title>Lista de compras:</mat-card-title>
+              <mat-card-content class="scrollable-content" [style.overflow]="'auto'" [style.height.px]="'300'">
+                    <mat-list>
+                      <mat-list-item class="list" *ngFor="let buyProduct of buyProducts">{{buyProduct.name}}<mat-icon (click)="cancel(buyProduct.name ,buyProduct.id)" aria-hidden="false" aria-label="Example home icon" style="margin-left: 10%" >clear</mat-icon></mat-list-item>
+                    </mat-list>
+              </mat-card-content>
+              <mat-card-footer>
+                <button class="publicar-button" mat-raised-button color="primary" style="margin: 5%" (click)="Comprar()">Comprar</button>
+              </mat-card-footer>
+  </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

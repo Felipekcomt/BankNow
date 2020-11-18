@@ -1,0 +1,14 @@
+<div class="div-credito">
+  <form [formGroup]="form" (ngSubmit)="editCustomer()">
+  <mat-card class="mat-card-credito" style="align-content: center">
+    <mat-card-subtitle>Linea de credito</mat-card-subtitle>
+    <mat-form-field class="selectable-field" appearance="fill">
+      <input matInput  placeholder="Ingrese la cantidad en soles" formControlName="wallet">
+    </mat-form-field>
+    <mat-card-footer>
+      <button class="publicar-button" mat-raised-button color="primary" type="submit" style="margin: 5%">Aceptar</button>
+      <button class="publicar-button" mat-raised-button color="primary"  style="margin: 5%" (click)="goToBack()">Cancelar</button>
+    </mat-card-footer>
+  </mat-card>
+  </form>
+</div>
