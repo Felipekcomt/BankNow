@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CustomerService} from '../services/customer.service';
 import {DialogErrorComponent} from '../dialog-error/dialog-error.component';
@@ -10,7 +10,9 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./details-customers.component.css']
 })
 export class DetailsCustomersComponent implements OnInit {
+  @ViewChild('printEl') printEl: ElementRef;
   customer: any;
+  displayedColumns: string[] = ['total', 'fecha'];
 
   // tslint:disable-next-line:max-line-length
   constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private router: Router, private dialog: MatDialog) { }
@@ -23,12 +25,15 @@ export class DetailsCustomersComponent implements OnInit {
     this.router.navigate(['/customer']);
   }
   GoToCreate(id: any): void{
-    if (this.customer.wallet !== 0)
+    if (this.customer.wallet < -12 - this.customer.mora)
     {
       this.dialog.open(DialogErrorComponent);
     } else {
       this.router.navigate(['credito/', id]);
     }
+  }
+  imprimir(): void {
+    window.print();
   }
 
 }

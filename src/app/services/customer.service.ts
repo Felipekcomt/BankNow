@@ -23,4 +23,10 @@ export class CustomerService {
   deleteCustomerById(id): any{
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+  createMovimientos(movimientos: any): any{
+    return this.http.post(this.baseUrl, movimientos);
+  }
+  getMovimientos(): any{
+    return this.http.get(this.baseUrl);
+  }
 }

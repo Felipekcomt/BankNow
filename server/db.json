@@ -1,18 +1,20 @@
 {
   "customer": [
     {
-      "name": "Donpepe",
-      "lastname": "elepepe",
-      "dni": "23232322",
-      "celular": "323235555",
-      "wallet": 488,
+      "name": "carlitos",
+      "lastname": "alonsito",
+      "dni": "28282828",
+      "celular": "929229292",
+      "wallet": 981,
       "cuotas": 0,
       "topay": 0,
-      "stock": 12.045081344117774,
-      "tasa": "TNA",
-      "rate": 5,
-      "initialdate": "2020-11-15T21:45:46.916Z",
-      "endingdate": "2020-12-15T21:45:46.916Z",
+      "stock": 0,
+      "tasa": "TEA",
+      "rate": 50,
+      "initialdate": "2020-12-20T00:18:07.651Z",
+      "endingdate": "2021-03-21T01:22:17.968Z",
+      "movimientos": [],
+      "mora": "10",
       "id": 1
     }
   ],

@@ -32,7 +32,7 @@ export class CreditoComponent implements OnInit{
   editCustomer(): any {
    const id = this.activatedRoute.snapshot.params.id;
     // tslint:disable-next-line:radix
-   this.customer.wallet = parseInt(this.form.value.wallet);
+   this.customer.wallet = this.customer.wallet + parseFloat(this.form.value.wallet);
    this.customer.initialdate = new Date();
    this.customer.endingdate = new Date();
    this.customer.endingdate.setMonth(this.customer.endingdate.getMonth() + 1);

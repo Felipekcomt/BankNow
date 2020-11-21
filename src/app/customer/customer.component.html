@@ -11,7 +11,7 @@
     </ng-container>
     <ng-container matColumnDef="wallet">
       <th mat-header-cell *matHeaderCellDef style="text-align: center"> Credito </th>
-      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center"> {{customer.wallet}} </td>
+      <td mat-cell *matCellDef="let customer" (click)="view(customer.id)" style="text-align: center"> {{customer.wallet.toFixed(2)}} </td>
     </ng-container>
     <ng-container matColumnDef="initialdate" >
       <th mat-header-cell *matHeaderCellDef style="text-align: center"> Fecha de inicio </th>

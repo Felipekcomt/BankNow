@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit {
   day: any;
   fecha: any;
   rateTemp: any;
+  movimiento = {total: 0, fecha: new Date() };
 
 
   constructor(private customerService: CustomerService, private router: Router
@@ -60,6 +61,7 @@ export class ProductsComponent implements OnInit {
     this.customer.wallet = this.customer.wallet - this.saldo;
     this.fecha = moment(new Date());
     this.day = Math.abs(this.fecha.diff(this.customer.endingdate, 'days'));
+    console.log(this.day);
     if (this.customer.tasa === 'TS')
     {
       this.customer.stock = this.customer.stock +  this.saldo * (1 + (this.customer.rate * this.day));
@@ -72,8 +74,13 @@ export class ProductsComponent implements OnInit {
             }
             this.customer.stock = this.customer.stock + this.saldo * (Math.pow(1 + (this.rateTemp), (this.day) ) )  ;
             }
+    // tslint:disable-next-line:radix
+    this.movimiento.total = this.saldo;
+    this.movimiento.fecha = new Date();
+    this.customer.movimientos.push(this.movimiento);
     this.customerService.editCustomerById(id, this.customer).subscribe(() => {});
     this.router.navigate(['/customer']);
+    console.log(this.customer.movimientos.total);
   }
   goToBack(): any {
     this.router.navigate(['/customer']);
