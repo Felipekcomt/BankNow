@@ -33,6 +33,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { ProductsComponent } from './products/products.component';
 import { DialogErrorBuyComponent } from './dialog-error-buy/dialog-error-buy.component';
+import { TerminosComponent } from './terminos/terminos.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { DialogErrorBuyComponent } from './dialog-error-buy/dialog-error-buy.com
     PAYComponent,
     AddCustomerComponent,
     ProductsComponent,
-    DialogErrorBuyComponent
+    DialogErrorBuyComponent,
+    TerminosComponent
   ],
   imports: [
     BrowserModule,

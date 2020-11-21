@@ -59,19 +59,6 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <mat-form-field>
-      <input matInput  placeholder="Ingrese la Mora" formControlName="mora">
-    </mat-form-field>
-    <div class ="alert-danger" *ngIf="mora.invalid && (mora.dirty || mora.touched)">
-      <div class="container-error-message" *ngIf="mora.errors.required">
-        Celular es requerido
-      </div>
-      <div class="container-error-message" *ngIf="mora.errors.pattern">
-        Solo se permiten numeros
-      </div>
-    </div>
-  </div>
 </form>
   <div class="radio-button">
   <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"

@@ -15,13 +15,13 @@ export class AddCustomerComponent implements OnInit {
   tempTasa: string;
   ListTasas: string[] = ['TEA', 'TNA', 'TS'];
   customer = {name: '', lastname: '', dni: 0 , celular: 0, wallet: 0, cuotas: 0, topay: 0,
-    stock: 0, tasa: '', rate: 0, initialdate: new Date(), endingdate: new Date(), movimientos: [], mora: ''};
+    stock: 0, tasa: '', rate: 0, initialdate: new Date(), endingdate: new Date(), movimientos: []};
   ngOnInit(): void {
     // tslint:disable-next-line:max-line-length
     this.form = new FormGroup({name: new FormControl('', [Validators.required, Validators.minLength(3)]), lastname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       // tslint:disable-next-line:max-line-length
     dni: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern(/^[0-9]\d{0,10}$/)]), celular: new FormControl('', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern(/^[0-9]\d{0,10}$/)]),
-    rate: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d{0,10}$/)]), mora: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d{0,10}$/)])});
+    rate: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]\d{0,10}$/)])});
   }
   createCustomer(): any{
     this.customer.name = this.form.value.name;
@@ -30,7 +30,6 @@ export class AddCustomerComponent implements OnInit {
     this.customer.celular = this.form.value.celular;
     this.customer.tasa = this.tempTasa;
     this.customer.wallet = - 5;
-    this.customer.mora = this.form.value.mora;
     // tslint:disable-next-line:radix
     this.customer.rate = parseInt(this.form.value.rate);
     this.customer.initialdate = null;
@@ -52,7 +51,6 @@ export class AddCustomerComponent implements OnInit {
   get dni() { return this.form.get('dni'); }
   get celular() { return this.form.get('celular'); }
   get rate() {return this.form.get('rate'); }
-  get mora() {return this.form.get('mora');}
 
 
 }

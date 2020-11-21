@@ -25,7 +25,7 @@ export class DetailsCustomersComponent implements OnInit {
     this.router.navigate(['/customer']);
   }
   GoToCreate(id: any): void{
-    if (this.customer.wallet < -12 - this.customer.mora)
+    if (this.customer.stock > 0)
     {
       this.dialog.open(DialogErrorComponent);
     } else {

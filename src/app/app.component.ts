@@ -19,7 +19,8 @@ export class AppComponent {
   fillerNav = [
     {name: 'Inicio' , route: '', icon: 'home' },
     {name: 'Clientes' , route: 'customer', icon: 'group' },
-    {name: 'Agregar Clientes', route: 'addcustomer', icon: 'add_circle_outline'}
+    {name: 'Agregar Clientes', route: 'addcustomer', icon: 'add_circle_outline'},
+    {name: 'Condiciones', route: 'terminos', icon: 'contact_support'}
   ];
 
   fillerContent = Array.from({length: 50}, () =>
