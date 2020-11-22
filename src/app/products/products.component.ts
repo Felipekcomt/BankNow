@@ -64,7 +64,7 @@ export class ProductsComponent implements OnInit {
     console.log(this.day);
     if (this.customer.tasa === 'TS')
     {
-      this.customer.stock = this.customer.stock +  this.saldo * (1 + (this.customer.rate * this.day));
+      this.customer.stock = this.customer.stock +  this.saldo * (1 + ( ( this.customer.rate / 100 ) * (this.day)));
     } else {
             if (this.customer.tasa === 'TNA' ){
               this.rateTemp = (Math.pow((1 + ((this.customer.rate / 100) / 360) ), 1) - 1);

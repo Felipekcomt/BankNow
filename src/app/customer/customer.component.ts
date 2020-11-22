@@ -6,6 +6,7 @@ import {DialogErrorComponent} from '../dialog-error/dialog-error.component';
 import {PAYComponent} from '../pay/pay.component';
 import {DialogErrorBuyComponent} from '../dialog-error-buy/dialog-error-buy.component';
 import * as moment from 'moment';
+import {DialogErrorPayComponent} from '../dialog-error-pay/dialog-error-pay.component';
 
 
 
@@ -48,7 +49,17 @@ export class CustomerComponent implements OnInit {
     this.router.navigate(['/detailscustomers', id]);
   }
   open(id: any): void {
-    this.dialog.open(PAYComponent, {data: { ident: id}});
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.customers?.length; i++) {
+      if (id === this.customers[i].id) {
+        if (this.customers[i].stock === 0) {
+          this.dialog.open(DialogErrorPayComponent);
+        } else {
+          this.dialog.open(PAYComponent, {data: { ident: id}});
+        }
+      }
+    }
+
   }
   buy(id: any): void {
     // tslint:disable-next-line:prefer-for-of

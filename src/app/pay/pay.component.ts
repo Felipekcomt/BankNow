@@ -47,6 +47,9 @@ export class PAYComponent implements OnInit {
   }
   SellAmortization(): void{
     const id = this.data.ident;
+    this.stock.stocktemp = this.form.value.stocktemp;
+    if (this.stock.stocktemp <= this.customer.stock)
+    {
     this.stock.stocktemp = parseFloat(this.form.value.stocktemp);
     this.customer.stock = this.customer.stock - this.stock.stocktemp;
     // tslint:disable-next-line:radix
@@ -56,8 +59,7 @@ export class PAYComponent implements OnInit {
     this.customer.movimientos.push(this.movimiento);
     this.customerService.editCustomerById(id, this.customer).subscribe(() => {});
     this.router.navigate(['/customer']);
-    console.log(this.stock.stocktemp);
-    window.location.reload();
+    }
   }
   goToBack(): any {
     this.router.navigate(['/customer']);

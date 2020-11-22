@@ -1,13 +1,13 @@
 <div id="div-print" class="div-details">
     <mat-card class="mat-card-customer">
      <div>
-       <mat-grid-list cols="15">
-         <mat-grid-tile colspan="9">
+       <mat-grid-list cols="24">
+         <mat-grid-tile colspan="16">
            <div style="position: relative; right: 260px"  >
-      <h1>Detalles del cliente</h1>
+      <h1 style="text-align: center">Detalles</h1>
            </div>
          </mat-grid-tile>
-         <mat-grid-tile [colspan]="2">
+         <mat-grid-tile [colspan]="4">
            <button class="button1" mat-raised-button color="primary" style="margin-right: 5%" (click)="GoToCreate(customer.id)">Linea de Credito</button>
          </mat-grid-tile>
          <mat-grid-tile colspan="2">

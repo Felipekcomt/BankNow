@@ -1,57 +1,77 @@
 {
   "customer": [
     {
-      "name": "Gean",
-      "lastname": "pier",
-      "dni": "83823828",
-      "celular": "329323232",
-      "wallet": 989.4,
+      "name": "Felipe",
+      "lastname": "Kcomt",
+      "dni": "72807056",
+      "celular": "963685899",
+      "wallet": 992,
       "cuotas": 0,
       "topay": 0,
-      "stock": 5.785929748140695,
+      "stock": 3.0996052222182295,
       "tasa": "TEA",
       "rate": 50,
-      "initialdate": "2020-11-21T04:19:23.365Z",
-      "endingdate": "2020-12-21T04:19:23.365Z",
+      "initialdate": "2020-11-21T23:17:05.181Z",
+      "endingdate": "2020-12-21T23:17:05.181Z",
       "movimientos": [
         {
-          "total": 19.7,
-          "fecha": "2020-11-21T04:19:49.767Z"
+          "total": 15.7,
+          "fecha": "2020-11-21T23:18:13.080Z"
         },
         {
-          "total": 20,
-          "fecha": "2020-11-21T04:20:07.894Z"
+          "total": -10,
+          "fecha": "2020-11-21T23:19:04.985Z"
         },
         {
-          "total": -20,
-          "fecha": "2020-11-21T04:20:22.279Z"
+          "total": -30,
+          "fecha": "2020-11-21T23:36:06.249Z"
         },
         {
-          "total": -19.700000000000003,
-          "fecha": "2020-11-21T04:20:34.576Z"
+          "total": 42.5,
+          "fecha": "2020-11-21T23:36:20.282Z"
         },
         {
-          "total": 5.6,
-          "fecha": "2020-11-21T04:21:03.807Z"
+          "total": -30,
+          "fecha": "2020-11-21T23:37:13.624Z"
+        },
+        {
+          "total": 11.8,
+          "fecha": "2020-11-21T23:38:19.821Z"
+        },
+        {
+          "total": 21,
+          "fecha": "2020-11-21T23:38:22.836Z"
+        },
+        {
+          "total": -30,
+          "fecha": "2020-11-21T23:39:00.357Z"
+        },
+        {
+          "total": 9,
+          "fecha": "2020-11-21T23:39:05.237Z"
+        },
+        {
+          "total": 13.5,
+          "fecha": "2020-11-21T23:40:03.125Z"
+        },
+        {
+          "total": -13.5,
+          "fecha": "2020-11-21T23:40:31.589Z"
+        },
+        {
+          "total": 10,
+          "fecha": "2020-11-21T23:40:45.402Z"
+        },
+        {
+          "total": -10,
+          "fecha": "2020-11-21T23:45:02.466Z"
+        },
+        {
+          "total": 3,
+          "fecha": "2020-11-21T23:48:23.162Z"
         }
       ],
       "id": 1
-    },
-    {
-      "name": "felipe",
-      "lastname": "kcomt",
-      "dni": "23232222",
-      "celular": "329392392",
-      "wallet": -5,
-      "cuotas": 0,
-      "topay": 0,
-      "stock": 0,
-      "tasa": "TEA",
-      "rate": 5,
-      "initialdate": null,
-      "endingdate": null,
-      "movimientos": [],
-      "id": 2
     }
   ],
   "products": [

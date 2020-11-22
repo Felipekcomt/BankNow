@@ -34,6 +34,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { ProductsComponent } from './products/products.component';
 import { DialogErrorBuyComponent } from './dialog-error-buy/dialog-error-buy.component';
 import { TerminosComponent } from './terminos/terminos.component';
+import { DialogErrorPayComponent } from './dialog-error-pay/dialog-error-pay.component';
+
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { TerminosComponent } from './terminos/terminos.component';
     AddCustomerComponent,
     ProductsComponent,
     DialogErrorBuyComponent,
-    TerminosComponent
+    TerminosComponent,
+    DialogErrorPayComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,7 @@ import { TerminosComponent } from './terminos/terminos.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent, DialogErrorComponent, PAYComponent, DialogErrorBuyComponent]
+  entryComponents: [DialogComponent, DialogErrorComponent, PAYComponent, DialogErrorBuyComponent, DialogErrorPayComponent]
 })
 export class AppModule { }
 export class MenuPositionExample {}
