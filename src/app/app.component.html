@@ -3,12 +3,23 @@
     <mat-toolbar style="background-color: lightskyblue"   class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
       <h1 class="example-app-name">BankNow</h1>
+      <div style="margin-left: 60%">
+        <button class="publicar-button" mat-raised-button color="primary"  style="margin: 5%" *ngIf="visible === false || visible === null" (click)="login()">Login</button>
+      </div>
+      <div style="margin-left: 3%">
+        <button class="publicar-button" mat-raised-button color="primary"  style="margin: 5%" *ngIf="visible === false || visible === null" (click)="Register()">Registro</button>
+      </div>
+      <div style="margin-left: 3%">
+      <button class="publicar-button" mat-raised-button color="primary"  style="margin: 5%" *ngIf="visible === true" (click)="logOut()">LogOut</button>
+      </div>
+      <div style="margin-left: 3%">
       <a class="e-financebook" href="http://e-financebook.com/" target="_blank"><mat-icon>calculate</mat-icon> E-financebook</a>
+      </div>
     </mat-toolbar>
 
     <mat-sidenav-container class="example-sidenav-container"
                            [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav mode="side" opened
+      <mat-sidenav mode="side" opened *ngIf="visible=== true"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" style="background-color: mediumspringgreen">
         <mat-nav-list>
           <a style="align-items: center" mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav"><mat-icon>{{nav.icon}}</mat-icon>{{nav.name}}</a>

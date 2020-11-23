@@ -9,7 +9,7 @@
         </mat-form-field>
   <div class ="alert-danger" *ngIf="stocktemp.invalid && (stocktemp.dirty || stocktemp.touched)">
     <div class="container-error-message" *ngIf="stocktemp.errors.required">Amortización requerida</div>
-    <div class="container-error-message" *ngIf="stocktemp.errors.pattern">Solo se permiten numeros</div>
+    <div class="container-error-message" *ngIf="stocktemp.errors.pattern">Solo se permiten numeros positivos</div>
   </div>
    <div>
   <button mat-raised-button color="primary" style="margin: 2%" matDialogClose (click)="SellAmortization()">

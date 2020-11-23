@@ -27,6 +27,15 @@
                     </mat-list>
               </mat-card-content>
               <mat-card-footer>
+                <form [formGroup]="form">
+                  <p>
+                    <input type="radio" value="SI" formControlName="tempDelivery"> Si
+                    <input type="radio" value="NO" formControlName="tempDelivery"> No
+                  </p>
+                  <div class="container-error-message" *ngIf="form.get('tempDelivery').invalid">
+                    Campo es requerido
+                  </div>
+                </form>
                 <button class="publicar-button" mat-raised-button color="primary" style="margin: 5%" (click)="Comprar()">Comprar</button>
               </mat-card-footer>
   </mat-card>

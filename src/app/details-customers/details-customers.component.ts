@@ -25,7 +25,7 @@ export class DetailsCustomersComponent implements OnInit {
     this.router.navigate(['/customer']);
   }
   GoToCreate(id: any): void{
-    if (this.customer.stock > 0)
+    if (this.customer.stock > 5)
     {
       this.dialog.open(DialogErrorComponent);
     } else {

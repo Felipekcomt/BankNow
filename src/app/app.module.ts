@@ -35,6 +35,11 @@ import { ProductsComponent } from './products/products.component';
 import { DialogErrorBuyComponent } from './dialog-error-buy/dialog-error-buy.component';
 import { TerminosComponent } from './terminos/terminos.component';
 import { DialogErrorPayComponent } from './dialog-error-pay/dialog-error-pay.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { DialogErrosRegisterComponent } from './dialog-erros-register/dialog-erros-register.component';
+import { DialogErrorLoginComponent } from './dialog-error-login/dialog-error-login.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 
 
@@ -53,7 +58,12 @@ import { DialogErrorPayComponent } from './dialog-error-pay/dialog-error-pay.com
     ProductsComponent,
     DialogErrorBuyComponent,
     TerminosComponent,
-    DialogErrorPayComponent
+    DialogErrorPayComponent,
+    RegisterComponent,
+    LoginComponent,
+    DialogErrosRegisterComponent,
+    DialogErrorLoginComponent,
+    EditCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +92,7 @@ import { DialogErrorPayComponent } from './dialog-error-pay/dialog-error-pay.com
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogComponent, DialogErrorComponent, PAYComponent, DialogErrorBuyComponent, DialogErrorPayComponent]
+  entryComponents: [DialogComponent, DialogErrorComponent, PAYComponent, DialogErrorBuyComponent, DialogErrorPayComponent, DialogErrosRegisterComponent, DialogErrorLoginComponent]
 })
 export class AppModule { }
 export class MenuPositionExample {}

@@ -1,0 +1,31 @@
+<div class="main-div">
+  <mat-card class="mat-card" >
+    <mat-card-title>Login</mat-card-title>
+    <form [formGroup]="form">
+      <div class="container">
+        <mat-form-field>
+          <input matInput placeholder="Ingrese su emial" formControlName="email">
+        </mat-form-field>
+        <div class ="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div class="container-error-message" *ngIf="email.errors.required">
+            Nombre es requerido
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Ingrese su password" formControlName="password">
+        </mat-form-field>
+        <div class ="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div class="container-error-message" *ngIf="password.errors.required">
+            Apellido es requerido
+          </div>
+        </div>
+      </div>
+    </form>
+    <mat-card-footer>
+      <button mat-raised-button class="button-footer" color="primary" (click)="Validation()">Aceptar</button>
+      <button mat-raised-button class="button-footer" color="primary" >Cancelar</button>
+    </mat-card-footer>
+  </mat-card>
+</div>

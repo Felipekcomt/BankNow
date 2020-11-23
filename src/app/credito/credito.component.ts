@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../services/customer.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {tasaService} from '../services/tasa.service';
@@ -25,12 +25,14 @@ export class CreditoComponent implements OnInit{
   customer: any;
   rate: any;
   ngOnInit(): void {
-    this.form = new FormGroup({wallet: new FormControl()});
+    this.form = new FormGroup({wallet: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+')])});
     this.retriveCustomer();
 
   }
   editCustomer(): any {
    const id = this.activatedRoute.snapshot.params.id;
+   if ( this.form.valid)
+   {
     // tslint:disable-next-line:radix
    this.customer.wallet = this.customer.wallet + parseFloat(this.form.value.wallet);
    this.customer.initialdate = new Date();
@@ -39,6 +41,7 @@ export class CreditoComponent implements OnInit{
    this.customerService.editCustomerById(id, this.customer).subscribe(() => {});
    this.dialog.open(DialogComponent, {data: {wallet: this.customer.wallet, rate: this.customer.rate}});
     }
+  }
   retriveCustomer(): any {
     const id = this.activatedRoute.snapshot.params.id;
     this.customerService.getCustomerById(id).subscribe(customer => this.customer = customer);
@@ -47,7 +50,7 @@ export class CreditoComponent implements OnInit{
   goToBack(): any {
     this.router.navigate(['/customer']);
   }
-
+  get wallet() { return this.form.get('wallet'); }
 }
 
 

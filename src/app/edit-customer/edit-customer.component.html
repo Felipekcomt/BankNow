@@ -1,0 +1,50 @@
+<div class="main-div">
+  <mat-card class="mat-card" >
+    <mat-card-title>Editar Cliente</mat-card-title>
+    <form [formGroup]="form">
+      <div class="container">
+        <mat-form-field>
+          <input matInput  placeholder="Ingrese su Celular" formControlName="celular">
+        </mat-form-field>
+        <div class ="alert-danger" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+          <div class="container-error-message" *ngIf="celular.errors.required">
+            Celular es requerido
+          </div>
+          <div class="container-error-message" *ngIf="celular.errors.minlength || celular.errors.maxlength">
+            Se requieren 9 numeros
+          </div>
+          <div class="container-error-message" *ngIf="celular.errors.pattern">
+            Solo se permiten numeros
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="radio-button">
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                       [(ngModel)]="tempTasa">
+        <mat-radio-button class="example-radio-button" *ngFor="let ListTasa of ListTasas" [value]="ListTasa">
+          {{ListTasa}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <form [formGroup]="form">
+      <div class="container">
+        <mat-form-field>
+          <input matInput placeholder="Ingrese la Tasa (%)" formControlName="rate">
+        </mat-form-field>
+        <div class ="alert-danger" *ngIf="rate.invalid && (rate.dirty || rate.touched)">
+          <div class="container-error-message" *ngIf="rate.errors.required">
+            Nombre es requerido
+          </div>
+          <div class="container-error-message" *ngIf="rate.errors.pattern">
+            Solo se permiten numeros
+          </div>
+        </div>
+      </div>
+    </form>
+    <mat-card-footer>
+      <button mat-raised-button class="button-footer" color="primary" (click)="Validation()">Aceptar</button>
+      <button mat-raised-button class="button-footer" color="primary" (click)="goToBack()">Cancelar</button>
+    </mat-card-footer>
+  </mat-card>
+</div>

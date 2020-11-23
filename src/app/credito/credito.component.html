@@ -5,6 +5,11 @@
     <mat-form-field class="selectable-field" appearance="fill">
       <input matInput  placeholder="Ingrese la cantidad en soles" formControlName="wallet">
     </mat-form-field>
+    <div class ="alert-danger" *ngIf="wallet.invalid && (wallet.dirty || wallet.touched)">
+      <div class="container-error-message" *ngIf="wallet.errors.required">
+        Monto requerido
+      </div>
+    </div>
     <mat-card-footer>
       <button class="publicar-button" mat-raised-button color="primary" type="submit" style="margin: 5%">Aceptar</button>
       <button class="publicar-button" mat-raised-button color="primary"  style="margin: 5%" (click)="goToBack()">Cancelar</button>
